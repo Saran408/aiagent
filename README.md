@@ -216,6 +216,16 @@ class TrivialVacuumEnvironment(Environment):
     def default_location(self, thing):
         """Agents start in either location at random."""
         return random.choice([loc_A, loc_B])
+        
+if __name__ == "__main__":
+    agent = TableDrivenVacuumAgent()
+    environment = TrivialVacuumEnvironment()
+    environment.add_thing(agent)
+    print(environment.status)
+    environment.run(steps=10)
+    print(environment.status)
+    print(agent.performance)
+    
 ``` 
 ## OUTPUT
 ![Screenshot 2022-04-06 211128](https://user-images.githubusercontent.com/75235427/162014389-1ed2fe52-e9ff-4d17-b601-646cc7f2641d.jpg)
